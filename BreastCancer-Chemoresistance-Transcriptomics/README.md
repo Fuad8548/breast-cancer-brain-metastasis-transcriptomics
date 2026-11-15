@@ -1,4 +1,4 @@
-# Transcriptomic & Machine Learning Biomarker Discovery for Taxane-Anthracycline Chemoresistance in Breast Cancer (GSE25066)
+# Bulk Transcriptomic & Machine Learning Biomarker Discovery for Taxane-Anthracycline Chemoresistance in Breast Cancer (GSE25066)
 
 ## 📌 Project Overview
 Neoadjuvant taxane-anthracycline chemotherapy is a cornerstone treatment for locally advanced breast cancer, yet **~80% of patients fail to achieve a pathological Complete Response (pCR)**, leaving Residual Disease (RD) with high relapse risk. 
@@ -62,54 +62,3 @@ Using a stratified 80/20 train-test split with `class_weight="balanced"`, the Ra
 
 > **Why Hybrid R + Python Matters:** Hypergeometric GO enrichment (`clusterProfiler`) captures large multi-gene pathway crowds (`SKP1`, `GATA3`, `PGK1`), whereas Random Forest **Gini Importance** captures both pathway sentinels *and* orthogonal single-gene biochemical bottlenecks (`TMSB15A`, `TTLL4`, `EPHB3`) that single-pathway tests miss.
 
----
-
-## 📂 Repository Structure
-
-```text
-├── scripts_R/
-│   ├── 01_data_acquisition_qc.R              # GEOquery download, metadata parsing & sample alignment
-│   ├── 02_limma_differential_expression.R    # Empirical Bayes DEA, Volcano plot & 2,938 DEG export
-│   ├── 03_export_ml_matrices.R               # Transposed ML feature export + hgu133a.db probe mapping
-│   ├── 04_go_split_enrichment.R              # compareCluster GO enrichment (RD-High vs. pCR-High)
-│   └── 05_integrated_story_summary.R         # Merges Milestones 3, 4 & 5 into unified table & 3-panel plot
-├── scripts_Python/
-│   └── biomarker_transcripts.py              # Stratified Random Forest training, ROC-AUC & Gini ranking
-├── data/
-│   ├── GSE25066_ML_Features.csv              # 306 patient samples x 2,938 significant probe features
-│   ├── GSE25066_ML_Labels.csv                # Binary clinical response labels (1 = RD, 0 = pCR)
-│   └── GSE25066_Probe_to_Gene_Map.csv        # Affymetrix HG-U133A (GPL96) Probe-to-Symbol map
-├── results/
-│   ├── tables/
-│   │   ├── 03_Biomarkers.csv                             # Full 2,938 limma significant DEGs
-│   │   ├── Milestone4_GO_Split_Results.csv               # Split GO BP enrichment (RD-High vs. pCR-High)
-│   │   ├── Milestone4_ML_to_GO_Pathway_Bridge.csv        # Programmatic mapping of Top 10 ML genes to GO terms
-│   │   └── GSE25066_Master_Integrated_Biomarkers.csv     # Master table combining limma, GO & Gini metrics
-│   └── figures/
-│       ├── Milestone3_Volcano_Plot.png                   # Differential expression overview
-│       ├── Milestone4_GO_Split_Pathways.png              # Side-by-side dotplot (RD-High vs. pCR-High)
-│       ├── Milestone5_Model_ROC_and_Biomarkers.png       # 2-panel ROC-AUC (0.90) + Top 10 Gini barplot
-│       └── Milestone_3_4_5_Integrated_Story.png          # Unified 3-panel translational summary figure
-└── README.md
-```
-
----
-
-## ⚙️ How to Reproduce
-
-### 1. R Environment Setup & Statistical/Pathway Pipeline
-```R
-# Install required CRAN & Bioconductor packages
-install.packages(c("tidyverse", "ggplot2", "patchwork"))
-BiocManager::install(c("GEOquery", "limma", "clusterProfiler", "org.Hs.eg.db", "hgu133a.db", "enrichplot"))
-
-# Run R pipeline scripts in order
-source("scripts_R/01_data_acquisition_qc.R")
-source("scripts_R/02_limma_differential_expression.R")
-source("scripts_R/03_export_ml_matrices.R")
-source("scripts_R/04_go_split_enrichment.R")
-source("scripts_R/05_integrated_story_summary.R")
-```
-
-### 2. Python Machine Learning Pipeline
-```bash

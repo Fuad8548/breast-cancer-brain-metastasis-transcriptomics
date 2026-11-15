@@ -61,7 +61,12 @@ Intact, dynamic microtubules serve as the cell's internal highway system, direct
 - Pro-Apoptotic Protein Delivery: Following drug-induced stress, microtubule-based transport shuttles key tumor suppressors (like p53) into the nucleus and delivers pro-apoptotic proteins (like Bim and Bax) to the mitochondria to trigger mitochondrial outer membrane permeabilization (MOMP).
 - Susceptibility to Spindle Poisons: High microtubule dynamic instability makes chemosensitive cells rapidly freeze when exposed to microtubule-targeting agents (like taxanes or vinca alkaloids), ensuring a robust, prolonged mitotic arrest that ends in cell death.
 
+## 3. Protein Localization to the Membrane: Uptake Over Efflux
 
+The exact balance of which proteins reach the plasma membrane—and which are kept away—determines whether lethal drug concentrations build up inside the cell:
+- Surface Retention of Influx Transporters: Chemosensitive cells properly traffic and anchor drug-uptake transporters at the plasma membrane. For example, high surface localization of CTR1 (Copper Transporter 1) ensures rapid uptake of cisplatin, while nucleoside transporters (hENT1) allow drugs like gemcitabine to flood the cell.
+- Internalization/Degradation of Efflux Pumps: Instead of anchoring ABC efflux pumps (like P-glycoprotein / MDR1) on the cell surface, chemosensitive cells retain them in intracellular vesicles or target them for lysosomal degradation, trapping the drug inside.
+- Death Receptor Clustering: Proper membrane organization (such as intact lipid rafts) allows death receptors like Fas (CD95) and DR4/DR5 to cluster at the cell surface in response to chemotherapy, efficiently triggering the extrinsic apoptosis pathway.
 
 
 
