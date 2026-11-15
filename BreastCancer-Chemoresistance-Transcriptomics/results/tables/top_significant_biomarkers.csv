@@ -1,0 +1,8 @@
+Rank (Gini),Gene Symbol,Gini Importance (),limma logFC (),Which Group Is Higher?,Biological Meaning
+#1,TMSB15A,0.006574,-1.40 (Negative),Chemoresistant (RD),Active Resistance Driver (cytoskeleton/invasion)
+#2,TTLL4,0.005051,-1.98 (Negative),Chemoresistant (RD),Active Resistance Driver (microtubule taxane shield)
+#3,EPHB3,0.004844,-0.94 (Negative),Chemoresistant (RD),Active Resistance Driver (cell-adhesion survival)
+#4,TBC1D9,0.004739,+1.76 (Positive),Chemosensitive (pCR),Sensitivity Marker (high in responders; lost in RD)
+#5,DSC2,0.004364,-1.46 (Negative),Chemoresistant (RD),Active Resistance Driver (desmosomal survival)
+#6,SKP1,0.004237,+0.39 (Positive),Chemosensitive (pCR),Sensitivity Marker (ubiquitin ligase complex)
+#7,GATA3,0.004216,+1.83 (Positive),Chemosensitive (pCR),Sensitivity Marker (luminal differentiation marker; loss = resistance)
