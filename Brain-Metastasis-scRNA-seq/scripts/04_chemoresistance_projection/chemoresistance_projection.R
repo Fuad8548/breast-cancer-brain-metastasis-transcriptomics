@@ -1,5 +1,3 @@
-#!/usr/bin/env Rscript
-
 # ==============================================================================
 # Pipeline Phase 4: Probe Translation, Cell Annotation & Chemoresistance Projection
 # Script: scripts/04_chemoresistance_projection.R

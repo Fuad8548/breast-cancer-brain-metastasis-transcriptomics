@@ -1,4 +1,4 @@
-# Bulk Transcriptomic & Machine Learning Biomarker Discovery for Taxane-Anthracycline Chemoresistance in Breast Cancer (GSE25066)
+# Bulk Microarray Transcriptomic & Machine Learning Biomarker Discovery for Taxane-Anthracycline Chemoresistance in Breast Cancer (GSE25066)
 
 ## 📌 Project Overview
 Neoadjuvant taxane-anthracycline chemotherapy is a cornerstone treatment for locally advanced breast cancer, yet **~80% of patients fail to achieve a pathological Complete Response (pCR)**, leaving Residual Disease (RD) with high relapse risk. 

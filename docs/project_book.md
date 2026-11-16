@@ -70,3 +70,27 @@ The exact balance of which proteins reach the plasma membrane—and which are ke
 
 
 
+# Diagnostic ML Panel for top significant biomarkers
+
+## Top Drivers: TMSB15A (#1), TTLL4 (#2), EPHB3 (#3)
+
+
+
+
+## Pathway Sentinels (SKP1, GATA3, PGK1)
+In cancer research, "Pathway Sentinels" refers to key regulatory genes or proteins that act as early indicators, gatekeepers, or master controllers of major biological pathways driving tumor behavior. Monitoring these specific molecules gives researchers a snapshot of whether critical cellular processes—like cell division, hormone signaling, or energy production—are functioning normally or spiraling out of control.
+
+### 1. SKP1 (Cell Cycle & Protein Degradation Sentinel)
+
+- Biological Role: SKP1 (S-Phase Kinase-Associated Protein 1) is a core component of the SCF (SKP1-Cullin-F-box) ubiquitin ligase complex. This cellular machinery tags unwanted or damaged proteins for destruction.
+- Cancer Significance: By controlling the timely breakdown of proteins that regulate the cell cycle (such as cyclins and tumor suppressors), SKP1 governs when a cell divides. Dysregulation or altered expression of SKP1 signals genomic instability and unchecked cell proliferation.
+
+### 2. GATA3 (Cell Differentiation & Hormone Signaling Sentinel)
+
+- Biological Role: GATA3 (G-A-T-A Binding Protein 3) is a transcription factor—a protein that binds to DNA to turn specific genes on or off. It is essential for maintaining the specialized identity (differentiation) of epithelial tissues, particularly in the mammary gland, as well as regulating immune T-cell development.
+- Cancer Significance: In breast cancer, GATA3 is closely tied to estrogen receptor (ER) signaling. High levels generally indicate a well-differentiated, hormone-sensitive tumor with a better prognosis, whereas loss or mutation of GATA3 signals that cancer cells are dedifferentiating (becoming more aggressive, stem-like, and prone to metastasis).
+
+### 3. PGK1 (Metabolism & Hypoxia Sentinel)
+
+- Biological Role: PGK1 (Phosphoglycerate Kinase 1) is a critical enzyme in glycolysis, responsible for generating ATP (cellular energy) from glucose.
+- Cancer Significance: Unlike healthy cells, tumors rapidly consume glucose even when oxygen is present—a phenomenon known as the Warburg effect. Elevated PGK1 acts as a sentinel for metabolic reprogramming and tumor hypoxia (low oxygen). High levels typically indicate an aggressive tumor microenvironment, increased metastatic potential, and resistance to chemotherapy or radiation.
