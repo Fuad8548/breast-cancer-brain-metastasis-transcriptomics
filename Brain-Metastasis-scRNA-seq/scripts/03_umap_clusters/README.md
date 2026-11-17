@@ -1,7 +1,7 @@
-# Milestone 03: Low-Memory Normalization, Harmony Batch Integration & Macro-Cluster UMAP (`03_normalization_clustering.R`)
+# Milestone 03: Low-Memory Normalization, Harmony Batch Integration & Macro-Cluster UMAP 
 
 ## 🎯 Objective
-Transform the QC-filtered single-cell matrix (`01_filtered_merged_seurat.rds`, **13,186 cells across 9 patient samples**) into a batch-corrected, low-dimensional cellular atlas that clearly separates **malignant brain metastasis compartments** from **adjacent normal brain parenchyma** and **shared host immune/stromal niches**—while staying strictly within an **8GB RAM** footprint.
+Transform the QC-filtered single-cell matrix (`01_filtered_merged_seurat.rds`, **13,186 cells across 9 patient samples**) into a batch-corrected, low-dimensional cellular atlas that clearly separates **malignant brain metastasis compartments** from **adjacent normal brain parenchyma** and **shared host immune/stromal niches**.
 
 ---
 
@@ -15,11 +15,11 @@ Transform the QC-filtered single-cell matrix (`01_filtered_merged_seurat.rds`, *
 | **4. PCA & Harmony Batch Correction**       | `RunPCA(npcs = TARGET_PCS)`<br>`RunHarmony(group.by.vars = "sample_id")`          | Removes technical patient-to-patient batch effects across the 9 surgical resections so shared host cells co-cluster by biological lineage rather than donor ID.                                                                 |
 | **5. Macro-Resolution Clustering**          | `FindNeighbors(dims = 1:20)`<br>`FindClusters(resolution = 0.2)`                  | Upgrades granularity from `0.5` (17 fragmented micro-clusters) to **`0.2` (11 clean macro-clusters, `0–10`)**, grouping cells into broad, interpretable anatomical compartments.                                                |
 | **6. Largest-Island Centroid Anchoring**    | `group_by(Sample_Clean, Macro_Cluster) %>% slice_max(n_cells, n = 1)`             | Computes each patient's `(UMAP 1, UMAP 2)` badge coordinates using the median of its **single largest cluster** rather than a global average—preventing labels from floating in empty white space between disconnected islands. |
-| **7. 3-Panel Publication Figure**           | `patchwork` (`p_macro                                                             | p_direct_labels                                                                                                                                                                                                                 | p_prop`) | Combines macro-cluster boundaries, binary tissue-colored patient localization, and exact per-cluster tissue percentages into **`03_umap_direct_labels_and_composition.png`**. |
+| **7. 3-Panel Publication Figure**           | `patchwork` (`p_macro`, `p_direct_labels`, `p_prop`)                              | Combines macro-cluster boundaries, binary tissue-colored patient localization, and exact per-cluster tissue percentages into **`03_umap_clusters.png`**.                                                                        |
 
 ---
 
-## 📊 Visual & Biological Output Analysis (`03_umap_direct_labels_and_composition.png`)
+## 📊 Visual & Biological Output Analysis 
 
 ### Panel A: Broad Cellular Clusters (`Resolution = 0.2`)
 * Partitions all **13,186 cells** into **11 distinct macro-clusters (`Clusters 0–10`)** with non-overlapping boxed labels (`repel = TRUE`).
@@ -40,9 +40,4 @@ Quantifies the exact cellular makeup of every macro-cluster, dividing the ecosys
 | **Normal-Brain-Dominated Islands**     | **Clusters `10`, `6`, `2`, `1`**     | **~73% – 100% Normal Brain (Red)**<br>*(Cluster 10: 100% Normal; Cluster 6: ~95% Normal; Cluster 2: ~88% Normal)* | **Resident CNS Parenchyma:** Oligodendrocytes, astrocytes, and cortical neurons enriched in adjacent non-malignant brain.                      |
 | **Shared Tumor–Host Microenvironment** | **Clusters `4`, `5`**                | **Blended Blue + Red**<br>*(Cluster 4: ~60% Tumor / 40% Normal; Cluster 5: ~33% Tumor / 67% Normal)*              | **Infiltrating Immune & Vascular Niche:** Microglia/macrophages, T cells, and endothelial cells co-integrated across normal and tumor tissues. |
 
----
 
-## 📁 Inputs & Generated Artifacts
-* **Input:** `data/serialized/01_filtered_merged_seurat.rds` (`13,186` QC-passed cells)
-* **Serialized Output:** `data/serialized/03_clustered_seurat.rds` (Harmony-integrated & macro-clustered Seurat object)
-* **Figure Output:** `outputs/figures/03_umap_direct_labels_and_composition.png`
